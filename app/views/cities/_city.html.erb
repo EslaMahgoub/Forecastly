@@ -1,0 +1,12 @@
+<div class="col-sm-3 weather-col" id="<%= css_id(city.name) %>-col">
+  <div class="card text-center">
+    <div class="card-body weather-card">
+      <h4 class="card-title"><%= city.name.capitalize %></h4>
+      <%= link_to '<span>&#x2718;<span>'.html_safe, city, remote: true, method: :delete, class: 'close' %>
+      <h6 class="card-subtitle text-muted"><%= l dt(city.timezone), format: :short %></h6>
+      <div class="temperature">
+        <%= render 'cities/temperature', city: city %> <%# use render_asynce instead %>
+      </div>
+    </div>
+  </div>
+</div>

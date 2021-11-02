@@ -1,0 +1,9 @@
+<!--/ Centralize alert for the whole app -->
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div class="alert alert-warning alert-dismissible fade show -<%= name.to_s == 'notice' ? 'success' : 'danger' %>" role="alert">
+      <button aria-hidden="true" class="btn-close" data-bs-dismiss="alert" type="button"></button>
+      <%= content_tag :div, msg, :id => "flash_#{name}"  %>
+    </div>
+  <% end %>
+<% end %>

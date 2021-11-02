@@ -1,0 +1,22 @@
+<% provide(:title, @user.name)%>
+
+<p>
+  <h1>
+  <%= @user.name %>
+  </h1>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @user.country %>
+</p>
+
+<div class="center">
+  <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-success center" %> |
+  <%= link_to 'Back', users_path, class: "btn btn-danger center" %>
+</div>

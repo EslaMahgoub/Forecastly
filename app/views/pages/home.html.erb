@@ -1,0 +1,32 @@
+<% provide(:title, "Home") %>
+<div class="card">
+  <div class="card-header">
+    <h4>Forecastly Weather App</h4>
+  </div>
+  <div class="card-body">
+<% if logged_in? %>
+
+  <p> Add New City </p>
+  <section class="center">
+    <%= render 'shared/add_city_form' %>
+  </section>
+   <div class="row">
+    <%= render @cities %>
+  </div>
+    <div class="center">
+     <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+  
+<% else %>
+
+  <p>Cloudy, Rainy, Snowing or hot as summer</p>
+  </div> 
+ 
+
+  <div class="card-footer center">
+  <%= link_to 'Create Account', signup_path, class: "btn btn-lg btn-info " %>
+  </div>
+
+  </div>
+
+<% end %>

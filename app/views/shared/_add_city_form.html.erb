@@ -1,0 +1,11 @@
+<%= simple_form_for @city, html: { id: 'add-city' }, data: {controller: "places", action: "google-maps-callback@window->places#initMap"} do |f| %>
+  <div >
+    <%= f.search_field :name, class: 'form-control', placeholder: t('menu.add.city_name'), data: {target: "places.field", action: "keydown->places#keydown"} %>
+    <%= f.submit t('menu.add.add_city'), data: { "disable-with": "Saving..." }, class: "btn btn-success" %>
+  </div>
+  <div class="p-4">
+    <div data-target="places.map"  style="height:400px; width:400px"></div>
+  <div>
+<% end %>
+
+

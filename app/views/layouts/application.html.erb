@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> <%= full_title(yield(:title)) %> </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <%= javascript_pack_tag 'hello_coffee' %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google[:api_key] %>&libraries=places&callback=initMap" async defer data-turbolinks-eval="false"></script>
+
+  </head>
+  <body>
+  
+  <div class="container">
+    <%= render 'layouts/header' %>
+    <%= render "shared/messages" %>
+  </div>
+  <div class="container p-4">
+    <%= yield %>
+    <%= content_for :render_async %>
+    <%= render 'layouts/footer' %>
+  </div>
+  </body>
+</html>
