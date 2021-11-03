@@ -19,7 +19,7 @@ class City < ApplicationRecord
   class << self
     # Retrieves the weather json
     def get_weather(name, type="weather")
-      api_key = Rails.application.credentials.open_weather_map[:api_key]
+      api_key = Rails.application.credentials[:open_weather_map_api_key]
       
       uri = URI("https://api.openweathermap.org/data/2.5/#{type}?q=#{URI.encode(name)}&units=metric&appid=#{api_key}")
       
