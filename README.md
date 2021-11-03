@@ -1,24 +1,14 @@
-# README
+# Basic Readme for Forecastly App
+## Features included in the app
+#### User can sign up, log in and delete his account
+#### User can add city to his home page
+#### Fetching the weather data for the related city from openweathermap api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Used Technlogies:
+#### Boostrap
+#### jquery
+#### coffeescript
+#### Google autocomplete and google maps
+#### Google timezone
+#### friendly ID gem for creating slugs
+#### minitest for test cases
