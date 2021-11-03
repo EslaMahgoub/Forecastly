@@ -6,3 +6,7 @@
 #     https: false
 #   )
 # end
+
+Timezone::Lookup.config(:google) do |c|
+  c.api_key = Rails.application.credentials[:google_api_key]
+end
